@@ -18,7 +18,7 @@ public class ClienteRestController {
 	GetClientes getClientes;
 
 	@GetMapping
-	public List<ClienteResponseModel> getAll() {
-		return ClienteResponseModel.convertToResponseList(this.getClientes.execute());
+	public List<ClienteResponseModel> findAll() {
+		return ClienteResponseModel.convert(this.getClientes.execute());
 	}
 }

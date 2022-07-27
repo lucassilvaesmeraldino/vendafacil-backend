@@ -14,11 +14,11 @@ import br.com.wmw.vendafacil_backend.domain.cliente.repository.ClienteRepository
 public class ClienteRepositoryImplementation implements ClienteRepository {
 
 	@Autowired
-	ClienteDatasource datasourcesCliente;
+	private ClienteDatasource datasourcesCliente;
 
 	@Override
 	public List<Cliente> getClientes() {
-		return ClienteModel.toClienteList(this.datasourcesCliente.getClientes());
+		return ClienteModel.convertToClienteList(this.datasourcesCliente.getClientes());
 	}
 
 }

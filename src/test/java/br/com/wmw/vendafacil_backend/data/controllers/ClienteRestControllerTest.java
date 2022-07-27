@@ -59,7 +59,7 @@ class ClienteRestControllerTest {
 				ClienteRestControllerTest.TIPOPESSOA_CLIENTE2);
 
 		final List<ClienteResponseModel> clienteResponseModelList = ClienteResponseModel
-				.convertToResponseList(List.of(cliente1, cliente2));
+				.convert(List.of(cliente1, cliente2));
 
 		this.mockMvc.perform(MockMvcRequestBuilders.get(new URI("/clientes")))
 		.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))

@@ -17,7 +17,7 @@ public class ClienteResponseModel {
 		this.nome = entity.getNome();
 	}
 
-	public static List<ClienteResponseModel> convertToResponseList(final List<Cliente> clientes) {
+	public static List<ClienteResponseModel> convert(final List<Cliente> clientes) {
 		return clientes.stream().map(ClienteResponseModel::new).collect(Collectors.toList());
 	}
 

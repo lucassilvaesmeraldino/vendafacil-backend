@@ -50,18 +50,17 @@ class ClienteResponseModelTest {
 				ClienteResponseModelTest.NOME_CLIENTE2, ClienteResponseModelTest.TELEFONE_CLIENTE2,
 				ClienteResponseModelTest.EMAIL_CLIENTE2, ClienteResponseModelTest.CNPJ_CLIENTE2,
 				ClienteResponseModelTest.TIPOPESSOA_CLIENTE2);
-		final List<Cliente> clienteList = List.of(cliente1, cliente2);
 
 		final List<ClienteResponseModel> clienteResponseModelList = ClienteResponseModel
-				.convertToResponseList(clienteList);
+				.convert(List.of(cliente1, cliente2));
 
 		final ClienteResponseModel clienteResponseModel1 = clienteResponseModelList.stream()
-				.filter(crm -> crm.getCodigo() == 1).findFirst().get();
+				.filter(crm -> crm.getCodigo() == ClienteResponseModelTest.CODIGO_CLIENTE1).findFirst().get();
 
 		assertEquals(clienteResponseModel1.getNome(), ClienteResponseModelTest.NOME_CLIENTE1);
 
 		final ClienteResponseModel clienteResponseModel2 = clienteResponseModelList.stream()
-				.filter(crm -> crm.getCodigo() == 2).findFirst().get();
+				.filter(crm -> crm.getCodigo() == ClienteResponseModelTest.CODIGO_CLIENTE2).findFirst().get();
 
 		assertEquals(clienteResponseModel2.getNome(), ClienteResponseModelTest.NOME_CLIENTE2);
 

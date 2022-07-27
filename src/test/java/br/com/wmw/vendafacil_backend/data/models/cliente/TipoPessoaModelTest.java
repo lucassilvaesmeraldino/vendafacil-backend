@@ -15,9 +15,9 @@ class TipoPessoaModelTest {
 
 	@Test
 	void deveriaConverterUmTipoPessoaModelParaUmTipoPessoa() {
-		final TipoPessoaModel tipoPessoamodel = new TipoPessoaModel(TipoPessoaModelTest.CODIGO_TIPOPESSOAMODEL,
+		final TipoPessoaModel tipoPessoaModel = new TipoPessoaModel(TipoPessoaModelTest.CODIGO_TIPOPESSOAMODEL,
 				TipoPessoaModelTest.NOME_TIPOPESSOAMODEL);
-		final TipoPessoa tipoPessoa = tipoPessoamodel.convertToEntity();
+		final TipoPessoa tipoPessoa = tipoPessoaModel.convertToTipoPessoa();
 
 		assertEquals(tipoPessoa.getCodigo(), TipoPessoaModelTest.CODIGO_TIPOPESSOAMODEL);
 		assertEquals(tipoPessoa.getNome(), TipoPessoaModelTest.NOME_TIPOPESSOAMODEL);

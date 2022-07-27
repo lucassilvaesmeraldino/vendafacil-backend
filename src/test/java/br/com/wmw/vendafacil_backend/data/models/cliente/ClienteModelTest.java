@@ -38,10 +38,10 @@ class ClienteModelTest {
 				ClienteModelTest.EMAIL_CLIENTEMODEL2, ClienteModelTest.TIPOPESSOA_CLIENTEMODEL2,
 				ClienteModelTest.CNPJ_CLIENTEMODEL2);
 
-		final List<ClienteModel> clienteModelList = List.of(clienteModel1, clienteMode2);
-		final List<Cliente> clienteList = ClienteModel.toClienteList(clienteModelList);
+		final List<Cliente> clienteList = ClienteModel.convertToClienteList(List.of(clienteModel1, clienteMode2));
 
-		final Cliente cliente1 = clienteList.stream().filter(c -> c.getCodigo() == 1).findFirst().get();
+		final Cliente cliente1 = clienteList.stream()
+				.filter(c -> c.getCodigo() == ClienteModelTest.CODIGO_CLIENTEMODEL1).findFirst().get();
 
 		assertEquals(cliente1.getNome(), ClienteModelTest.NOME_CLIENTEMODEL1);
 		assertEquals(cliente1.getTelefone(), ClienteModelTest.TELEFONE_CLIENTEMODEL1);
@@ -49,7 +49,8 @@ class ClienteModelTest {
 		assertEquals(cliente1.getTipo().getNome(), ClienteModelTest.TIPOPESSOA_CLIENTEMODEL1.getNome());
 		assertEquals(cliente1.getCpfCnpj(), ClienteModelTest.CPF_CLIENTEMODEL1);
 
-		final Cliente cliente2 = clienteList.stream().filter(c -> c.getCodigo() == 2).findFirst().get();
+		final Cliente cliente2 = clienteList.stream()
+				.filter(c -> c.getCodigo() == ClienteModelTest.CODIGO_CLIENTEMODEL2).findFirst().get();
 
 		assertEquals(cliente2.getNome(), ClienteModelTest.NOME_CLIENTEMODEL2);
 		assertEquals(cliente2.getTelefone(), ClienteModelTest.TELEFONE_CLIENTEMODEL2);

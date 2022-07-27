@@ -2,17 +2,23 @@ package br.com.wmw.vendafacil_backend.domain.produto.entity;
 
 public class Produto {
 
-	private Integer codigo;
+	private Long codigo;
 
 	private String nome;
 
 	private Double preco;
 
-	public Integer getCodigo() {
+	public Produto(final Long codigo, final String nome, final Double preco) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.preco = preco;
+	}
+
+	public Long getCodigo() {
 		return this.codigo;
 	}
 
-	public void setCodigo(final Integer codigo) {
+	public void setCodigo(final Long codigo) {
 		this.codigo = codigo;
 	}
 

@@ -22,7 +22,7 @@ public class TipoPessoaModel {
 	private Long codigo;
 	private String nome;
 
-	public TipoPessoa convertToEntity() {
+	public TipoPessoa convertToTipoPessoa() {
 		return new TipoPessoa(this.codigo, this.nome);
 	}
 
