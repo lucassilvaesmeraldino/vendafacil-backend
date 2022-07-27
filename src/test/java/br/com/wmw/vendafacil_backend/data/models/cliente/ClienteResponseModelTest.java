@@ -24,7 +24,7 @@ class ClienteResponseModelTest {
 	private static final String NOME_CLIENTE2 = "João";
 	private static final String TELEFONE_CLIENTE2 = "(48)88888-8888";
 	private static final String EMAIL_CLIENTE2 = "joao@gmail.com";
-	private static final TipoPessoa TIPOPESSOA_CLIENTE2 = new TipoPessoa((long) 1, "Jurídica");
+	private static final TipoPessoa TIPOPESSOA_CLIENTE2 = new TipoPessoa((long) 2, "Jurídica");
 	private static final String CNPJ_CLIENTE2 = "88.888.888/8888-88";
 
 	@Test
