@@ -10,17 +10,26 @@ import br.com.wmw.vendafacil_backend.domain.cliente.entity.TipoPessoa;
 @SpringBootTest
 class TipoPessoaModelTest {
 
-	private static final long CODIGO_TIPOPESSOAMODEL = 1;
-	private static final String NOME_TIPOPESSOAMODEL = "Física";
+	private static final long CODIGO_TIPOPESSOA = 1;
+	private static final String DESCRICAO_TIPOPESSOA = "Física";
 
 	@Test
 	void deveriaConverterUmTipoPessoaModelParaUmTipoPessoa() {
-		final TipoPessoaModel tipoPessoaModel = new TipoPessoaModel(TipoPessoaModelTest.CODIGO_TIPOPESSOAMODEL,
-				TipoPessoaModelTest.NOME_TIPOPESSOAMODEL);
-		final TipoPessoa tipoPessoa = tipoPessoaModel.convertToTipoPessoa();
+		final TipoPessoaModel tipoPessoaModel = new TipoPessoaModel(TipoPessoaModelTest.CODIGO_TIPOPESSOA,
+				TipoPessoaModelTest.DESCRICAO_TIPOPESSOA);
+		final TipoPessoa tipoPessoa = tipoPessoaModel.toTipoPessoa();
 
-		assertEquals(tipoPessoa.getCodigo(), TipoPessoaModelTest.CODIGO_TIPOPESSOAMODEL);
-		assertEquals(tipoPessoa.getNome(), TipoPessoaModelTest.NOME_TIPOPESSOAMODEL);
+		assertEquals(tipoPessoa.getCodigo(), TipoPessoaModelTest.CODIGO_TIPOPESSOA);
+		assertEquals(tipoPessoa.getDescricao(), TipoPessoaModelTest.DESCRICAO_TIPOPESSOA);
+	}
+
+	@Test
+	void deveriaConverterUmTipoPessoaParaUmTipoPessoaModel() {
+		final TipoPessoa tipoPessoa = new TipoPessoa(TipoPessoaModelTest.CODIGO_TIPOPESSOA,
+				TipoPessoaModelTest.DESCRICAO_TIPOPESSOA);
+		final TipoPessoaModel tipoPessoaModel = TipoPessoaModel.convert(tipoPessoa);
+		assertEquals(tipoPessoaModel.getCodigo(), TipoPessoaModelTest.CODIGO_TIPOPESSOA);
+		assertEquals(tipoPessoaModel.getDescricao(), TipoPessoaModelTest.DESCRICAO_TIPOPESSOA);
 	}
 
 }

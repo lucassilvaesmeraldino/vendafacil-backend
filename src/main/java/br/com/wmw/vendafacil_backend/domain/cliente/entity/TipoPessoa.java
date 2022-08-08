@@ -3,11 +3,11 @@ package br.com.wmw.vendafacil_backend.domain.cliente.entity;
 public class TipoPessoa {
 
 	private Long codigo;
-	private String nome;
+	private String descricao;
 
-	public TipoPessoa(final Long codigo, final String nome) {
+	public TipoPessoa(final Long codigo, final String descricao) {
 		this.codigo = codigo;
-		this.nome = nome;
+		this.descricao = descricao;
 	}
 
 	public Long getCodigo() {
@@ -18,12 +18,12 @@ public class TipoPessoa {
 		this.codigo = codigo;
 	}
 
-	public String getNome() {
-		return this.nome;
+	public String getDescricao() {
+		return this.descricao;
 	}
 
-	public void setNome(final String nome) {
-		this.nome = nome;
+	public void setDescricao(final String descricao) {
+		this.descricao = descricao;
 	}
 
 }

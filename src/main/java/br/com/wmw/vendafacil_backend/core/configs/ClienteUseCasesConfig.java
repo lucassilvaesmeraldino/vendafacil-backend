@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import br.com.wmw.vendafacil_backend.domain.cliente.repository.ClienteRepository;
+import br.com.wmw.vendafacil_backend.domain.cliente.usecases.GetCliente;
 import br.com.wmw.vendafacil_backend.domain.cliente.usecases.GetClientes;
 
 @Configuration
@@ -16,5 +17,10 @@ public class ClienteUseCasesConfig {
 	@Bean
 	public GetClientes getClientes() {
 		return new GetClientes(this.clienteRepository);
+	}
+
+	@Bean
+	public GetCliente getCliente() {
+		return new GetCliente(this.clienteRepository);
 	}
 }

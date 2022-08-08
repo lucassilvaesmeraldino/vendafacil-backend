@@ -8,4 +8,6 @@ public interface ClienteRepository {
 
 	List<Cliente> getClientes();
 
+	Cliente getClienteByCodigo(Long codigo);
+
 }

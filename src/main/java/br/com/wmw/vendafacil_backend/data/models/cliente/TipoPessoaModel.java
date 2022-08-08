@@ -20,10 +20,19 @@ public class TipoPessoaModel {
 
 	@Id
 	private Long codigo;
-	private String nome;
+	private String descricao;
 
-	public TipoPessoa convertToTipoPessoa() {
-		return new TipoPessoa(this.codigo, this.nome);
+	public TipoPessoaModel(final TipoPessoa tipoPessoa) {
+		this.codigo = tipoPessoa.getCodigo();
+		this.descricao = tipoPessoa.getDescricao();
+	}
+
+	public TipoPessoa toTipoPessoa() {
+		return new TipoPessoa(this.codigo, this.descricao);
+	}
+
+	public static TipoPessoaModel convert(final TipoPessoa tipoPessoa) {
+		return new TipoPessoaModel(tipoPessoa);
 	}
 
 }

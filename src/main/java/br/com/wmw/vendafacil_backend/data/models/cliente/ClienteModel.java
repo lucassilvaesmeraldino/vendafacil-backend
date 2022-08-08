@@ -38,12 +38,28 @@ public class ClienteModel {
 
 	private String cpfCnpj;
 
+	public ClienteModel(final Cliente cliente) {
+		this.codigo = cliente.getCodigo();
+		this.nome = cliente.getNome();
+		this.telefone = cliente.getTelefone();
+		this.email = cliente.getEmail();
+		this.tipo = TipoPessoaModel.convert(cliente.getTipo());
+		this.cpfCnpj = cliente.getCpfCnpj();
+	}
+
 	public static List<Cliente> convertToClienteList(final List<ClienteModel> clienteModelList) {
 		return clienteModelList.stream()
 				.map(clienteModel -> new Cliente(clienteModel.getCodigo(), clienteModel.getNome(),
 						clienteModel.getTelefone(), clienteModel.getEmail(), clienteModel.getCpfCnpj(),
-						clienteModel.getTipo().convertToTipoPessoa()))
+						clienteModel.getTipo().toTipoPessoa()))
 				.collect(Collectors.toList());
 	}
 
+	public static ClienteModel convert(final Cliente cliente) {
+		return new ClienteModel(cliente);
+	}
+
+	public Cliente toCliente() {
+		return new Cliente(this.codigo, this.nome, this.telefone, this.email, this.cpfCnpj, this.tipo.toTipoPessoa());
+	}
 }

@@ -47,7 +47,7 @@ class ClienteRepositoryImplementationTest {
 		assertEquals(cliente1.getEmail(), ClienteRepositoryImplementationTest.EMAIL_CLIENTE1);
 		assertEquals(cliente1.getTelefone(), ClienteRepositoryImplementationTest.TELEFONE_CLIENTE1);
 		assertEquals(cliente1.getCpfCnpj(), ClienteRepositoryImplementationTest.CPF_CLIENTE1);
-		assertEquals(cliente1.getTipo().getNome(), ClienteRepositoryImplementationTest.TIPOPESSOANOME_CLIENTE1);
+		assertEquals(cliente1.getTipo().getDescricao(), ClienteRepositoryImplementationTest.TIPOPESSOANOME_CLIENTE1);
 
 		final Cliente cliente2 = clienteList.stream()
 				.filter(c -> c.getCodigo() == ClienteRepositoryImplementationTest.CODIGO_CLIENTE2).findFirst().get();
@@ -55,7 +55,7 @@ class ClienteRepositoryImplementationTest {
 		assertEquals(cliente2.getEmail(), ClienteRepositoryImplementationTest.EMAIL_CLIENTE2);
 		assertEquals(cliente2.getTelefone(), ClienteRepositoryImplementationTest.TELEFONE_CLIENTE2);
 		assertEquals(cliente2.getCpfCnpj(), ClienteRepositoryImplementationTest.CNPJ_CLIENTE2);
-		assertEquals(cliente2.getTipo().getNome(), ClienteRepositoryImplementationTest.TIPOPESSOANOME_CLIENTE2);
+		assertEquals(cliente2.getTipo().getDescricao(), ClienteRepositoryImplementationTest.TIPOPESSOANOME_CLIENTE2);
 
 	}
 
