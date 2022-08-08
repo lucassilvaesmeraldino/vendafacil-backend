@@ -21,7 +21,7 @@ class ProdutoModelTest {
 	private static final double PRECO_PRODUTO2 = 4000.00;
 
 	@Test
-	void deveriaConverterUmaListaDeProdutosModelParaUmaListaDeProdutos() {
+	void deveriaConverterUmaListaDeProdutosModelEmUmaListaDeProdutos() {
 		final ProdutoModel produtoModel1 = new ProdutoModel(ProdutoModelTest.CODIGO_PRODUTO1,
 				ProdutoModelTest.NOME_PRODUTO1, ProdutoModelTest.PRECO_PRODUTO1);
 		final ProdutoModel produtoModel2 = new ProdutoModel(ProdutoModelTest.CODIGO_PRODUTO2,

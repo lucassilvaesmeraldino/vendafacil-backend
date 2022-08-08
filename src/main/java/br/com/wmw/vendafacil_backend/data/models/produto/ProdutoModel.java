@@ -28,9 +28,23 @@ public class ProdutoModel {
 
 	private Double preco;
 
+	public ProdutoModel(final Produto produto) {
+		this.codigo = produto.getCodigo();
+		this.nome = produto.getNome();
+		this.preco = produto.getPreco();
+	}
+
 	public static List<Produto> convertToProdutoList(final List<ProdutoModel> produtoModelList) {
 		return produtoModelList.stream().map(
 				produtoModel -> new Produto(produtoModel.getCodigo(), produtoModel.getNome(), produtoModel.getPreco()))
 				.collect(Collectors.toList());
+	}
+
+	public static ProdutoModel toProdutoModel(final Produto produto) {
+		return new ProdutoModel(produto);
+	}
+
+	public Produto toProduto() {
+		return new Produto(this.codigo, this.nome, this.preco);
 	}
 }

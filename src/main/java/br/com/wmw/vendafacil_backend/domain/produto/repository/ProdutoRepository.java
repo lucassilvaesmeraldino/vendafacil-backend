@@ -7,4 +7,6 @@ import br.com.wmw.vendafacil_backend.domain.produto.entity.Produto;
 public interface ProdutoRepository {
 
 	List<Produto> getProdutos();
+
+	Produto getProdutoByCodigo(Long codigo);
 }
