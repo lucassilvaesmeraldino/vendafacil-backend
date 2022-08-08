@@ -34,7 +34,7 @@ class PedidoRestControllerTest {
 	private final Gson gson = new Gson();
 
 	private static final String PEDIDO_DATAEMISSAO = LocalDate.now().toString();
-	private static final String PEDIDO_DATAENTREGA = LocalDate.of(2022, 8, 6).toString();
+	private static final String PEDIDO_DATAENTREGA = LocalDate.now().plusDays(1).toString();
 	private static final double PEDIDO_VALORTOTAL_UMITEM = 39.98;
 	private static final double PEDIDO_VALORTOTAL_UMITEM_INVALIDO = 49;
 	private static final double PEDIDO_VALORTOTAL_TWOITENS = 174.65;
@@ -173,7 +173,7 @@ class PedidoRestControllerTest {
 		.perform(MockMvcRequestBuilders.post(new URI("/pedidos")).contentType(MediaType.APPLICATION_JSON)
 				.content(new Gson().toJson(pedidoJsonWithOneItemAndTotalValueIncorrect)))
 		.andExpect(status().isBadRequest())
-				.andExpect(jsonPath("$.message", equalTo(PedidoRestControllerTest.VALORTOTAL_INCORRETO_MESSAGE)));
+		.andExpect(jsonPath("$.message", equalTo(PedidoRestControllerTest.VALORTOTAL_INCORRETO_MESSAGE)));
 	}
 
 	@Test
@@ -205,8 +205,8 @@ class PedidoRestControllerTest {
 		.perform(MockMvcRequestBuilders.post(new URI("/pedidos")).contentType(MediaType.APPLICATION_JSON)
 				.content(new Gson().toJson(pedidoJsonWithOneItemAndItemUnitPriceIncorrect)))
 		.andExpect(status().isBadRequest())
-				.andExpect(
-						jsonPath("$.message", equalTo(PedidoRestControllerTest.PRECOUNITARIOITEM_INCORRETO_MESSAGE)));
+		.andExpect(
+				jsonPath("$.message", equalTo(PedidoRestControllerTest.PRECOUNITARIOITEM_INCORRETO_MESSAGE)));
 	}
 
 	@Test
@@ -266,7 +266,7 @@ class PedidoRestControllerTest {
 		.perform(MockMvcRequestBuilders.post(new URI("/pedidos")).contentType(MediaType.APPLICATION_JSON)
 				.content(new Gson().toJson(pedidoJsonWithOneItemAndStatusPedidoCodeInvalid)))
 		.andExpect(status().isBadRequest()).andExpect(
-						jsonPath("$.message", equalTo(PedidoRestControllerTest.CODIGOSTATUSPEDIDO_INCORRETO_MESSAGE)));
+				jsonPath("$.message", equalTo(PedidoRestControllerTest.CODIGOSTATUSPEDIDO_INCORRETO_MESSAGE)));
 	}
 
 	@Test
@@ -298,7 +298,7 @@ class PedidoRestControllerTest {
 		.perform(MockMvcRequestBuilders.post(new URI("/pedidos")).contentType(MediaType.APPLICATION_JSON)
 				.content(new Gson().toJson(pedidoJsonWithOneItemAndStatusPedidoCodeInvalid)))
 		.andExpect(status().isBadRequest())
-				.andExpect(jsonPath("$.message", equalTo(PedidoRestControllerTest.CODIGOCLIENTE_INCORRETO_MESSAGE)));
+		.andExpect(jsonPath("$.message", equalTo(PedidoRestControllerTest.CODIGOCLIENTE_INCORRETO_MESSAGE)));
 	}
 
 	@Test
