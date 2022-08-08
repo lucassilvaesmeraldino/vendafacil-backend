@@ -14,7 +14,7 @@
 	<name>vendafacil-backend</name>
 	<description>Backend do Venda Fácil, que possibilita vendedores realizarem vendas de onde estiverem</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
