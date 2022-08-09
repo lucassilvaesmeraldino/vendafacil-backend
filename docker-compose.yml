@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  sql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 1433:1433
+    networks:
+      - vendafacil-network
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Password@12345
+    build:
+      context: "./"
+      dockerfile: "Dockerfile-SQL"
+      
+  vendafacil-backend:
+    container_name: vendafacil-container
+    image: vendafacil-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - vendafacil-network
+    depends_on:
+      - "sql"
+    environment:
+      spring.profiles.active: prod
+      DATASOURCE_URL: jdbc:sqlserver://sql:1433;databaseName=vendafacil;encrypt=false
+      DATASOURCE_USERNAME: sa
+      DATASOURCE_PASSWORD: Password@12345
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
+
+networks:
+  vendafacil-network:
+    driver: bridge          
+

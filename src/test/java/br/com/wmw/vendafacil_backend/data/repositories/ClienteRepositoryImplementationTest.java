@@ -23,14 +23,14 @@ class ClienteRepositoryImplementationTest {
 	private static final String EMAIL_CLIENTE1 = "maria@email.com";
 	private static final String TELEFONE_CLIENTE1 = "(99)99999-9999";
 	private static final String CPF_CLIENTE1 = "457.468.540-93";
-	private static final String TIPOPESSOANOME_CLIENTE1 = "Física";
+	private static final String TIPOPESSOANOME_CLIENTE1 = "Fisica";
 
 	private static final long CODIGO_CLIENTE2 = 2;
 	private static final String NOME_CLIENTE2 = "San Marino";
 	private static final String EMAIL_CLIENTE2 = "sanmarino@email.com";
 	private static final String TELEFONE_CLIENTE2 = "(99)99999-9999";
 	private static final String CNPJ_CLIENTE2 = "21.843.963/0001-27";
-	private static final String TIPOPESSOANOME_CLIENTE2 = "Jurídica";
+	private static final String TIPOPESSOANOME_CLIENTE2 = "Juridica";
 
 	@Autowired
 	private ClienteRepository clienteRepository;

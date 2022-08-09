@@ -9,10 +9,10 @@
 	</parent>
 	<groupId>br.com.wmw</groupId>
 	<artifactId>vendafacil-backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 	<name>vendafacil-backend</name>
-	<description>Backend do Venda Fácil, que possibilita vendedores realizarem vendas de onde estiverem</description>
+	<description>Backend do Venda Fácil, que possibilita vendedores realizarem vendas de onde estiverem.</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -64,6 +64,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>vendafacil</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -75,6 +76,27 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.13</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<repository>${project.artifactId}</repository>
+					<tag>${project.version}</tag>
+					<buildArgs>
+						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+					</buildArgs>
 				</configuration>
 			</plugin>
 		</plugins>
