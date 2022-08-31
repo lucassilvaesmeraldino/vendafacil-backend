@@ -11,8 +11,8 @@ import org.springframework.test.context.ActiveProfiles;
 import br.com.wmw.vendafacil_backend.domain.produto.usecases.GetProduto;
 import br.com.wmw.vendafacil_backend.domain.shared.entity.ItemPedido;
 
-@SpringBootTest
 @ActiveProfiles("test")
+@SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class ItemPedidoRequestModelTest {
 

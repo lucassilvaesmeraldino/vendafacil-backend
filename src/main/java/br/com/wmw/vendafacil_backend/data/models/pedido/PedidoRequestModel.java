@@ -24,10 +24,8 @@ import lombok.Getter;
 public class PedidoRequestModel {
 
 	@NotNull(message = "A data de emissão do pedido não pode ser nula.")
-	@FutureOrPresent(message = "A data de emissão deve ser igual a presente data ou posterior.")
 	private final LocalDate dataEmissao;
 	@NotNull(message = "A data de entrega do pedido não pode ser nula.")
-	@FutureOrPresent(message = "A data de entrega deve ser igual a presente data ou posterior.")
 	private final LocalDate dataEntrega;
 	@Positive
 	private final Long codigoStatusPedido;

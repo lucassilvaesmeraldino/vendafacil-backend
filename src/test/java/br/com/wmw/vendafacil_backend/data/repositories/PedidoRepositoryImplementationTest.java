@@ -20,8 +20,8 @@ import br.com.wmw.vendafacil_backend.domain.pedido.repository.PedidoRepository;
 import br.com.wmw.vendafacil_backend.domain.produto.entity.Produto;
 import br.com.wmw.vendafacil_backend.domain.shared.entity.ItemPedido;
 
-@SpringBootTest
 @ActiveProfiles("test")
+@SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class PedidoRepositoryImplementationTest {
 

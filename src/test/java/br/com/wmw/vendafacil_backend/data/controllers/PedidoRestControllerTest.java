@@ -15,6 +15,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -22,10 +23,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-@SpringBootTest
 @ActiveProfiles("test")
+@SpringBootTest
 @AutoConfigureMockMvc
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class PedidoRestControllerTest {
 
 	@Autowired
@@ -35,30 +35,30 @@ class PedidoRestControllerTest {
 
 	private static final String PEDIDO_DATAEMISSAO = LocalDate.now().toString();
 	private static final String PEDIDO_DATAENTREGA = LocalDate.now().plusDays(1).toString();
-	private static final double PEDIDO_VALORTOTAL_UMITEM = 39.98;
+	private static final double PEDIDO_VALORTOTAL_UMITEM = 89.955;
 	private static final double PEDIDO_VALORTOTAL_UMITEM_INVALIDO = 49;
-	private static final double PEDIDO_VALORTOTAL_TWOITENS = 174.65;
+	private static final double PEDIDO_VALORTOTAL_DOISITENS = 251.65799999999997;
 	private static final long PEDIDO_CODIGOSTATUSPEDIDO = 1;
 	private static final long PEDIDO_CODIGOSTATUSPEDIDO_INVALIDO = 4;
 	private static final long PEDIDO_CODIGOCLIENTE = 1;
-	private static final long PEDIDO_CODIGOCLIENTE_INVALIDO = 4;
+	private static final long PEDIDO_CODIGOCLIENTE_INVALIDO = 9;
 
 	private static final long ITEMPEDIDO_NUMEROSEQUENCIA = 1;
-	private static final int ITEMPEDIDO_QUANTIDADE = 2;
-	private static final double ITEMPEDIDO_PRECOUNITARIO = 19.99;
+	private static final int ITEMPEDIDO_QUANTIDADE = 5;
+	private static final double ITEMPEDIDO_PRECOUNITARIO = 17.991;
 	private static final double ITEMPEDIDO_PRECOUNITARIO_INCORRETO = 9.99;
-	private static final double ITEMPEDIDO_DESCONTO = 0;
-	private static final double ITEMPEDIDO_VALORTOTAL = 39.98;
+	private static final double ITEMPEDIDO_DESCONTO = 1.9989999999999999;
+	private static final double ITEMPEDIDO_VALORTOTAL = 89.955;
 	private static final long ITEMPEDIDO_CODIGOPRODUTO = 1;
 
 	private static final long ITEMPEDIDO2_NUMEROSEQUENCIA = 2;
 	private static final int ITEMPEDIDO2_QUANTIDADE = 3;
-	private static final double ITEMPEDIDO2_PRECOUNITARIO = 44.89;
-	private static final double ITEMPEDIDO2_DESCONTO = 15.00;
-	private static final double ITEMPEDIDO2_VALORTOTAL = 134.67;
+	private static final double ITEMPEDIDO2_PRECOUNITARIO = 53.900999999999996;
+	private static final double ITEMPEDIDO2_DESCONTO = 5.989000000000001;
+	private static final double ITEMPEDIDO2_VALORTOTAL = 161.70299999999997;
 	private static final long ITEMPEDIDO2_CODIGOPRODUTO = 2;
 
-	private static final String STATUSPEDIDO_DESCRICAO = "Emitido";
+	private static final String STATUSPEDIDO_DESCRICAO = "Fechado";
 
 	private static final String CLIENTE_CPFCNPJ = "457.468.540-93";
 
@@ -130,7 +130,7 @@ class PedidoRestControllerTest {
 		pedidoJsonWithTwoItens.addProperty("dataEntrega", PedidoRestControllerTest.PEDIDO_DATAENTREGA);
 		pedidoJsonWithTwoItens.addProperty("codigoStatusPedido", PedidoRestControllerTest.PEDIDO_CODIGOSTATUSPEDIDO);
 		pedidoJsonWithTwoItens.addProperty("codigoCliente", PedidoRestControllerTest.PEDIDO_CODIGOCLIENTE);
-		pedidoJsonWithTwoItens.addProperty("valorTotal", PedidoRestControllerTest.PEDIDO_VALORTOTAL_TWOITENS);
+		pedidoJsonWithTwoItens.addProperty("valorTotal", PedidoRestControllerTest.PEDIDO_VALORTOTAL_DOISITENS);
 		pedidoJsonWithTwoItens.add("itens", itemPedidoListJson);
 
 		this.mockMvc
@@ -140,7 +140,7 @@ class PedidoRestControllerTest {
 		.andExpect(jsonPath("$.dataEmissao", equalTo(PedidoRestControllerTest.PEDIDO_DATAEMISSAO)))
 		.andExpect(jsonPath("$.statusPedido", equalTo(PedidoRestControllerTest.STATUSPEDIDO_DESCRICAO)))
 		.andExpect(jsonPath("$.cpfCnpjCliente", equalTo(PedidoRestControllerTest.CLIENTE_CPFCNPJ)))
-		.andExpect(jsonPath("$.valorTotal", equalTo(PedidoRestControllerTest.PEDIDO_VALORTOTAL_TWOITENS)));
+		.andExpect(jsonPath("$.valorTotal", equalTo(PedidoRestControllerTest.PEDIDO_VALORTOTAL_DOISITENS)));
 	}
 
 	@Test

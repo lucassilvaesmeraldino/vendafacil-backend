@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.com.wmw.vendafacil_backend.domain.cliente.entity.Cliente;
 import br.com.wmw.vendafacil_backend.domain.cliente.entity.TipoPessoa;
 
-@SpringBootTest
 class ClienteModelTest {
 
 	private static final long CODIGO_CLIENTE = 1;

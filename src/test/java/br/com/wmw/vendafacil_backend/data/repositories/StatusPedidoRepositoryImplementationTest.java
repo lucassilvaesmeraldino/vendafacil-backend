@@ -14,8 +14,8 @@ import br.com.wmw.vendafacil_backend.core.exceptions.NotFoundException;
 import br.com.wmw.vendafacil_backend.domain.pedido.entity.StatusPedido;
 import br.com.wmw.vendafacil_backend.domain.pedido.repository.StatusPedidoRepository;
 
-@SpringBootTest
 @ActiveProfiles("test")
+@SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class StatusPedidoRepositoryImplementationTest {
 
@@ -23,7 +23,7 @@ class StatusPedidoRepositoryImplementationTest {
 	private StatusPedidoRepository statusPedidoRepository;
 
 	private static final long STATUSPEDIDO_CODIGOVALIDO = 1;
-	private static final String STATUSPEDIDO_DESCRICAOVALIDA = "Emitido";
+	private static final String STATUSPEDIDO_DESCRICAOVALIDA = "Fechado";
 	private static final long STATUSPEDIDO_CODIGOINVALIDO = 4;
 
 	@Test

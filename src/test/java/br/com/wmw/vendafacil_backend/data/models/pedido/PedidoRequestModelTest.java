@@ -17,7 +17,7 @@ import br.com.wmw.vendafacil_backend.domain.pedido.usecases.GetStatusPedido;
 import br.com.wmw.vendafacil_backend.domain.produto.usecases.GetProduto;
 
 @SpringBootTest
-@ActiveProfiles("teste")
+@ActiveProfiles("test")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class PedidoRequestModelTest {
 

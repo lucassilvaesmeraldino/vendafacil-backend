@@ -9,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.wmw.vendafacil_backend.domain.produto.entity.Produto;
 
-@SpringBootTest
 class ProdutoResponseModelTest {
 
 	private static final long CODIGO_PRODUTO = 1;

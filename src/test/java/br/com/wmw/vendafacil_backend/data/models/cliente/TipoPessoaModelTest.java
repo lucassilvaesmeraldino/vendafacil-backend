@@ -7,7 +7,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.wmw.vendafacil_backend.domain.cliente.entity.TipoPessoa;
 
-@SpringBootTest
 class TipoPessoaModelTest {
 
 	private static final long CODIGO_TIPOPESSOA = 1;

@@ -45,9 +45,9 @@ public class PedidoExceptionHandlers {
 	public final ResponseEntity<Object> handleUserMethodFieldErrors(final NotFoundException ve,
 			final WebRequest request) {
 
-		final ValidationError valitionError = ValidationError.builder().message(ve.getMessage()).build();
+		final ValidationError validationError = ValidationError.builder().message(ve.getMessage()).build();
 
-		return ResponseEntity.badRequest().body(valitionError);
+		return ResponseEntity.badRequest().body(validationError);
 
 	}
 
