@@ -44,11 +44,11 @@ class PedidoResponseModelTest {
 				null);
 		final PedidoResponseModel pedidoResponseModel = new PedidoResponseModel(pedido);
 
-		assertEquals(pedidoResponseModel.getNumero(), PedidoResponseModelTest.PEDIDO_NUMERO);
-		assertEquals(pedidoResponseModel.getDataEmissao(), PedidoResponseModelTest.PEDIDO_DATAEMISSAO);
-		assertEquals(pedidoResponseModel.getStatusPedido(), PedidoResponseModelTest.STATUSPEDIDO_DESCRICAO);
-		assertEquals(pedidoResponseModel.getCpfCnpjCliente(), PedidoResponseModelTest.CLIENTE_CPFCNPJ);
-		assertEquals(pedidoResponseModel.getValorTotal(), PedidoResponseModelTest.PEDIDO_VALORTOTAL);
+		assertEquals(PedidoResponseModelTest.PEDIDO_NUMERO, pedidoResponseModel.getNumero());
+		assertEquals(PedidoResponseModelTest.PEDIDO_DATAEMISSAO, pedidoResponseModel.getDataEmissao());
+		assertEquals(PedidoResponseModelTest.STATUSPEDIDO_DESCRICAO, pedidoResponseModel.getStatusPedido());
+		assertEquals(PedidoResponseModelTest.CLIENTE_CPFCNPJ, pedidoResponseModel.getCpfCnpjCliente());
+		assertEquals(PedidoResponseModelTest.PEDIDO_VALORTOTAL, pedidoResponseModel.getValorTotal());
 	}
 
 }

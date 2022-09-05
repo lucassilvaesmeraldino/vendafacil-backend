@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.wmw.vendafacil_backend.domain.cliente.entity.Cliente;
 import br.com.wmw.vendafacil_backend.domain.cliente.entity.TipoPessoa;
@@ -56,12 +55,12 @@ class ClienteResponseModelTest {
 		final ClienteResponseModel clienteResponseModel1 = clienteResponseModelList.stream()
 				.filter(crm -> crm.getCodigo() == ClienteResponseModelTest.CODIGO_CLIENTE).findFirst().get();
 
-		assertEquals(clienteResponseModel1.getNome(), ClienteResponseModelTest.NOME_CLIENTE);
+		assertEquals(ClienteResponseModelTest.NOME_CLIENTE, clienteResponseModel1.getNome());
 
 		final ClienteResponseModel clienteResponseModel2 = clienteResponseModelList.stream()
 				.filter(crm -> crm.getCodigo() == ClienteResponseModelTest.CODIGO_CLIENTE2).findFirst().get();
 
-		assertEquals(clienteResponseModel2.getNome(), ClienteResponseModelTest.NOME_CLIENTE2);
+		assertEquals(ClienteResponseModelTest.NOME_CLIENTE2, clienteResponseModel2.getNome());
 
 	}
 

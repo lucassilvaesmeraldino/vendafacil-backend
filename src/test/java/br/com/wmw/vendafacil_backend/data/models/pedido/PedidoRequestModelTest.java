@@ -46,11 +46,11 @@ class PedidoRequestModelTest {
 				PedidoRequestModelTest.PEDIDOREQUESTMODEL_VALORTOTAL, new ArrayList<>());
 		final Pedido pedido = pedidoRequestModel.toPedido(this.getStatusPedido, this.getProduto, this.getCliente);
 
-		assertEquals(pedido.getDataEmissao(), PedidoRequestModelTest.PEDIDOREQUESTMODEL_DATAEMISSAO);
-		assertEquals(pedido.getDataEntrega(), PedidoRequestModelTest.PEDIDOREQUESTMODEL_DATAENTREGA);
-		assertEquals(pedido.getValorTotal(), PedidoRequestModelTest.PEDIDOREQUESTMODEL_VALORTOTAL);
-		assertEquals(pedido.getStatus().getCodigo(), PedidoRequestModelTest.PEDIDOREQUESTMODEL_CODIGOSTATUSPEDIDO);
-		assertEquals(pedido.getCliente().getCodigo(), PedidoRequestModelTest.PEDIDOREQUESTMODEL_CODIGOCLIENTE);
+		assertEquals(PedidoRequestModelTest.PEDIDOREQUESTMODEL_DATAEMISSAO, pedido.getDataEmissao());
+		assertEquals(PedidoRequestModelTest.PEDIDOREQUESTMODEL_DATAENTREGA, pedido.getDataEntrega());
+		assertEquals(PedidoRequestModelTest.PEDIDOREQUESTMODEL_VALORTOTAL, pedido.getValorTotal());
+		assertEquals(PedidoRequestModelTest.PEDIDOREQUESTMODEL_CODIGOSTATUSPEDIDO, pedido.getStatus().getCodigo());
+		assertEquals(PedidoRequestModelTest.PEDIDOREQUESTMODEL_CODIGOCLIENTE, pedido.getCliente().getCodigo());
 	}
 
 }

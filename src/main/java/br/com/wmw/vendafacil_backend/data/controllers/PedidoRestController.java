@@ -37,7 +37,7 @@ public class PedidoRestController {
 
 	@PostMapping
 	@Transactional
-	public ResponseEntity<?> create(@Valid @RequestBody final PedidoRequestModel pedidoRequestModel,
+	public ResponseEntity<PedidoResponseModel> create(@Valid @RequestBody final PedidoRequestModel pedidoRequestModel,
 			final UriComponentsBuilder uriBuilder) {
 		final Pedido pedidoData = pedidoRequestModel.toPedido(this.getStatusPedido, this.getProduto, this.getCliente);
 		final Pedido pedidoCreated = this.createPedido.execute(pedidoData);

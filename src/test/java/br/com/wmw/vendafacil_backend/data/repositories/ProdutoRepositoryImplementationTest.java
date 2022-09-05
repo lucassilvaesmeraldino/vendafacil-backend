@@ -69,53 +69,53 @@ class ProdutoRepositoryImplementationTest {
 
 		final Produto produto1 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO1).findFirst().get();
-		assertEquals(produto1.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO1);
-		assertEquals(produto1.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO1);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO1, produto1.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO1, produto1.getPreco());
 
 		final Produto produto2 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO2).findFirst().get();
-		assertEquals(produto2.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO2);
-		assertEquals(produto2.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO2);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO2, produto2.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO2, produto2.getPreco());
 		
 		final Produto produto3 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO3).findFirst().get();
-		assertEquals(produto3.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO3);
-		assertEquals(produto3.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO3);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO3, produto3.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO3, produto3.getPreco());
 		
 		final Produto produto4 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO4).findFirst().get();
-		assertEquals(produto4.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO4);
-		assertEquals(produto4.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO4);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO4, produto4.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO4, produto4.getPreco());
 		
 		final Produto produto5 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO5).findFirst().get();
-		assertEquals(produto5.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO5);
-		assertEquals(produto5.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO5);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO5, produto5.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO5, produto5.getPreco());
 		
 		final Produto produto6 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO6).findFirst().get();
-		assertEquals(produto6.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO6);
-		assertEquals(produto6.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO6);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO6, produto6.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO6, produto6.getPreco());
 		
 		final Produto produto7 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO7).findFirst().get();
-		assertEquals(produto7.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO7);
-		assertEquals(produto7.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO7);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO7, produto7.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO7, produto7.getPreco());
 		
 		final Produto produto8 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO8).findFirst().get();
-		assertEquals(produto8.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO8);
-		assertEquals(produto8.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO8);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO8, produto8.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO8, produto8.getPreco());
 		
 		final Produto produto9 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO9).findFirst().get();
-		assertEquals(produto9.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO9);
-		assertEquals(produto9.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO9);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO9, produto9.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO9, produto9.getPreco());
 		
 		final Produto produto10 = produtoList.stream()
 				.filter(p -> p.getCodigo() == ProdutoRepositoryImplementationTest.CODIGO_PRODUTO10).findFirst().get();
-		assertEquals(produto10.getNome(), ProdutoRepositoryImplementationTest.NOME_PRODUTO10);
-		assertEquals(produto10.getPreco(), ProdutoRepositoryImplementationTest.PRECO_PRODUTO10);
+		assertEquals(ProdutoRepositoryImplementationTest.NOME_PRODUTO10, produto10.getNome());
+		assertEquals(ProdutoRepositoryImplementationTest.PRECO_PRODUTO10, produto10.getPreco());
 
 	}
 

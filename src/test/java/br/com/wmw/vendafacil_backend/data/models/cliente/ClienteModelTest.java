@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.wmw.vendafacil_backend.domain.cliente.entity.Cliente;
 import br.com.wmw.vendafacil_backend.domain.cliente.entity.TipoPessoa;
@@ -47,20 +46,20 @@ class ClienteModelTest {
 		final Cliente cliente1 = clienteList.stream()
 				.filter(c -> c.getCodigo() == ClienteModelTest.CODIGO_CLIENTE).findFirst().get();
 
-		assertEquals(cliente1.getNome(), ClienteModelTest.NOME_CLIENTE);
-		assertEquals(cliente1.getTelefone(), ClienteModelTest.TELEFONE_CLIENTE);
-		assertEquals(cliente1.getEmail(), ClienteModelTest.EMAIL_CLIENTE);
-		assertEquals(cliente1.getTipo().getDescricao(), ClienteModelTest.DESCRICAO_TIPOPESSOA);
-		assertEquals(cliente1.getCpfCnpj(), ClienteModelTest.CPF_CLIENTE);
+		assertEquals(ClienteModelTest.NOME_CLIENTE, cliente1.getNome());
+		assertEquals(ClienteModelTest.TELEFONE_CLIENTE, cliente1.getTelefone());
+		assertEquals(ClienteModelTest.EMAIL_CLIENTE, cliente1.getEmail());
+		assertEquals(ClienteModelTest.DESCRICAO_TIPOPESSOA, cliente1.getTipo().getDescricao());
+		assertEquals(ClienteModelTest.CPF_CLIENTE, cliente1.getCpfCnpj());
 
 		final Cliente cliente2 = clienteList.stream()
 				.filter(c -> c.getCodigo() == ClienteModelTest.CODIGO_CLIENTE2).findFirst().get();
 
-		assertEquals(cliente2.getNome(), ClienteModelTest.NOME_CLIENTE2);
-		assertEquals(cliente2.getTelefone(), ClienteModelTest.TELEFONE_CLIENTE2);
-		assertEquals(cliente2.getEmail(), ClienteModelTest.EMAIL_CLIENTE2);
-		assertEquals(cliente2.getTipo().getDescricao(), ClienteModelTest.DESCRICAO_TIPOPESSOA2);
-		assertEquals(cliente2.getCpfCnpj(), ClienteModelTest.CNPJ_CLIENTE2);
+		assertEquals(ClienteModelTest.NOME_CLIENTE2, cliente2.getNome());
+		assertEquals(ClienteModelTest.TELEFONE_CLIENTE2, cliente2.getTelefone());
+		assertEquals(ClienteModelTest.EMAIL_CLIENTE2, cliente2.getEmail());
+		assertEquals(ClienteModelTest.DESCRICAO_TIPOPESSOA2, cliente2.getTipo().getDescricao());
+		assertEquals(ClienteModelTest.CNPJ_CLIENTE2, cliente2.getCpfCnpj());
 
 	}
 
@@ -71,12 +70,12 @@ class ClienteModelTest {
 				new TipoPessoaModel(ClienteModelTest.CODIGO_TIPOPESSOA, ClienteModelTest.DESCRICAO_TIPOPESSOA),
 				ClienteModelTest.CPF_CLIENTE);
 		final Cliente cliente = clienteModelUnico.toCliente();
-		assertEquals(cliente.getCodigo(), ClienteModelTest.CODIGO_CLIENTE);
-		assertEquals(cliente.getNome(), ClienteModelTest.NOME_CLIENTE);
-		assertEquals(cliente.getTelefone(), ClienteModelTest.TELEFONE_CLIENTE);
-		assertEquals(cliente.getEmail(), ClienteModelTest.EMAIL_CLIENTE);
-		assertEquals(cliente.getTipo().getDescricao(), ClienteModelTest.DESCRICAO_TIPOPESSOA);
-		assertEquals(cliente.getCpfCnpj(), ClienteModelTest.CPF_CLIENTE);
+		assertEquals(ClienteModelTest.CODIGO_CLIENTE, cliente.getCodigo());
+		assertEquals(ClienteModelTest.NOME_CLIENTE, cliente.getNome());
+		assertEquals(ClienteModelTest.TELEFONE_CLIENTE, cliente.getTelefone());
+		assertEquals(ClienteModelTest.EMAIL_CLIENTE, cliente.getEmail());
+		assertEquals(ClienteModelTest.DESCRICAO_TIPOPESSOA, cliente.getTipo().getDescricao());
+		assertEquals(ClienteModelTest.CPF_CLIENTE, cliente.getCpfCnpj());
 	}
 
 	@Test
@@ -85,12 +84,12 @@ class ClienteModelTest {
 				ClienteModelTest.TELEFONE_CLIENTE, ClienteModelTest.EMAIL_CLIENTE, ClienteModelTest.CPF_CLIENTE,
 				new TipoPessoa(ClienteModelTest.CODIGO_TIPOPESSOA, ClienteModelTest.DESCRICAO_TIPOPESSOA));
 		final ClienteModel clienteModel = ClienteModel.convert(clienteUnico);
-		assertEquals(clienteModel.getCodigo(), ClienteModelTest.CODIGO_CLIENTE);
-		assertEquals(clienteModel.getNome(), ClienteModelTest.NOME_CLIENTE);
-		assertEquals(clienteModel.getTelefone(), ClienteModelTest.TELEFONE_CLIENTE);
-		assertEquals(clienteModel.getEmail(), ClienteModelTest.EMAIL_CLIENTE);
-		assertEquals(clienteModel.getTipo().getDescricao(), ClienteModelTest.DESCRICAO_TIPOPESSOA);
-		assertEquals(clienteModel.getCpfCnpj(), ClienteModelTest.CPF_CLIENTE);
+		assertEquals(ClienteModelTest.CODIGO_CLIENTE, clienteModel.getCodigo());
+		assertEquals(ClienteModelTest.NOME_CLIENTE, clienteModel.getNome());
+		assertEquals(ClienteModelTest.TELEFONE_CLIENTE, clienteModel.getTelefone());
+		assertEquals(ClienteModelTest.EMAIL_CLIENTE, clienteModel.getEmail());
+		assertEquals(ClienteModelTest.DESCRICAO_TIPOPESSOA, clienteModel.getTipo().getDescricao());
+		assertEquals(ClienteModelTest.CPF_CLIENTE, clienteModel.getCpfCnpj());
 	}
 
 }

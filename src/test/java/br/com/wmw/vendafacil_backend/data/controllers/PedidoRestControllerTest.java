@@ -10,12 +10,10 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -37,7 +35,7 @@ class PedidoRestControllerTest {
 	private static final String PEDIDO_DATAENTREGA = LocalDate.now().plusDays(1).toString();
 	private static final double PEDIDO_VALORTOTAL_UMITEM = 89.955;
 	private static final double PEDIDO_VALORTOTAL_UMITEM_INVALIDO = 49;
-	private static final double PEDIDO_VALORTOTAL_DOISITENS = 251.65799999999997;
+	private static final double PEDIDO_VALORTOTAL_DOISITENS = 251.91500000000002;
 	private static final long PEDIDO_CODIGOSTATUSPEDIDO = 1;
 	private static final long PEDIDO_CODIGOSTATUSPEDIDO_INVALIDO = 4;
 	private static final long PEDIDO_CODIGOCLIENTE = 1;
@@ -52,11 +50,11 @@ class PedidoRestControllerTest {
 	private static final long ITEMPEDIDO_CODIGOPRODUTO = 1;
 
 	private static final long ITEMPEDIDO2_NUMEROSEQUENCIA = 2;
-	private static final int ITEMPEDIDO2_QUANTIDADE = 3;
-	private static final double ITEMPEDIDO2_PRECOUNITARIO = 53.900999999999996;
-	private static final double ITEMPEDIDO2_DESCONTO = 5.989000000000001;
-	private static final double ITEMPEDIDO2_VALORTOTAL = 161.70299999999997;
-	private static final long ITEMPEDIDO2_CODIGOPRODUTO = 2;
+	private static final int ITEMPEDIDO2_QUANTIDADE = 5;
+	private static final double ITEMPEDIDO2_PRECOUNITARIO = 32.392;
+	private static final double ITEMPEDIDO2_DESCONTO = 8.098;
+	private static final double ITEMPEDIDO2_VALORTOTAL = 161.96;
+	private static final long ITEMPEDIDO2_CODIGOPRODUTO = 3;
 
 	private static final String STATUSPEDIDO_DESCRICAO = "Fechado";
 

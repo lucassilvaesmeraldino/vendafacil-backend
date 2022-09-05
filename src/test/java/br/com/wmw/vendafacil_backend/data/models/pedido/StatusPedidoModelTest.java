@@ -18,8 +18,8 @@ class StatusPedidoModelTest {
 				StatusPedidoModelTest.DESCRICAO_STATUSPEDIDO);
 		final StatusPedidoModel statusPedidoModel = StatusPedidoModel.convert(statusPedido);
 
-		assertEquals(statusPedidoModel.getCodigo(), StatusPedidoModelTest.CODIGO_STATUSPEDIDO);
-		assertEquals(statusPedidoModel.getDescricao(), StatusPedidoModelTest.DESCRICAO_STATUSPEDIDO);
+		assertEquals(StatusPedidoModelTest.CODIGO_STATUSPEDIDO, statusPedidoModel.getCodigo());
+		assertEquals(StatusPedidoModelTest.DESCRICAO_STATUSPEDIDO, statusPedidoModel.getDescricao());
 
 	}
 
@@ -29,8 +29,8 @@ class StatusPedidoModelTest {
 				StatusPedidoModelTest.CODIGO_STATUSPEDIDO, StatusPedidoModelTest.DESCRICAO_STATUSPEDIDO);
 		final StatusPedido statusPedido = statusPedidoModel.toStatusPedido();
 
-		assertEquals(statusPedido.getCodigo(), StatusPedidoModelTest.CODIGO_STATUSPEDIDO);
-		assertEquals(statusPedido.getDescricao(), StatusPedidoModelTest.DESCRICAO_STATUSPEDIDO);
+		assertEquals(StatusPedidoModelTest.CODIGO_STATUSPEDIDO, statusPedido.getCodigo());
+		assertEquals(StatusPedidoModelTest.DESCRICAO_STATUSPEDIDO, statusPedido.getDescricao());
 
 	}
 

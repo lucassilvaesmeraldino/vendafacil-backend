@@ -2,14 +2,11 @@ package br.com.wmw.vendafacil_backend.data.models.pedido;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.validation.Valid;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
-import javax.validation.constraints.PositiveOrZero;
 
 import br.com.wmw.vendafacil_backend.domain.cliente.usecases.GetCliente;
 import br.com.wmw.vendafacil_backend.domain.pedido.entity.Pedido;
@@ -24,14 +21,19 @@ import lombok.Getter;
 public class PedidoRequestModel {
 
 	@NotNull(message = "A data de emissão do pedido não pode ser nula.")
+	@NotNull
 	private final LocalDate dataEmissao;
 	@NotNull(message = "A data de entrega do pedido não pode ser nula.")
+	@NotNull
 	private final LocalDate dataEntrega;
 	@Positive
+	@NotNull
 	private final Long codigoStatusPedido;
 	@Positive
+	@NotNull
 	private final Long codigoCliente;
-	@PositiveOrZero(message = "O valor do pedido deve ser zero ou maior que zero.")
+	@Positive(message = "O valor do pedido deve ser maior que zero.")
+	@NotNull
 	private final Double valorTotal;
 	@NotEmpty(message = "O pedido deve ter itens vinculados a ele mesmo.")
 	@Valid
@@ -40,7 +42,7 @@ public class PedidoRequestModel {
 	public Pedido toPedido(final GetStatusPedido getStatusPedido, final GetProduto getProduto,
 			final GetCliente getCliente) {
 		final List<ItemPedido> itensConverted = this.itens.stream().map(i -> i.toItemPedido(getProduto))
-				.collect(Collectors.toList());
+				.toList();
 		return new Pedido(this.dataEmissao, this.dataEntrega,
 				getStatusPedido.execute(this.codigoStatusPedido), this.valorTotal,
 				getCliente.execute(this.codigoCliente), itensConverted);

@@ -88,23 +88,23 @@ class PedidoRepositoryImplementationTest {
 		final Pedido pedidoCriado = this.pedidoRepository.createPedido(pedidoComUmItem);
 
 		assertNotNull(pedidoCriado);
-		assertEquals(pedidoCriado.getDataEmissao(), PedidoRepositoryImplementationTest.PEDIDO_DATAEMISSAO);
-		assertEquals(pedidoCriado.getDataEntrega(), PedidoRepositoryImplementationTest.PEDIDO_DATAENTREGA);
-		assertEquals(pedidoCriado.getValorTotal(),
-				PedidoRepositoryImplementationTest.PEDIDO_VALORTOTAL_UMITEM);
-		assertEquals(pedidoCriado.getStatus().getCodigo(),
-				PedidoRepositoryImplementationTest.STATUSPEDIDO_CODIGO);
-		assertEquals(pedidoCriado.getStatus().getDescricao(),
-				PedidoRepositoryImplementationTest.STATUSPEDIDO_DESCRICAO);
-		assertEquals(pedidoCriado.getCliente().getCodigo(), PedidoRepositoryImplementationTest.CLIENTE_CODIGO);
-		assertEquals(pedidoCriado.getCliente().getNome(), PedidoRepositoryImplementationTest.CLIENTE_NOME);
-		assertEquals(pedidoCriado.getCliente().getTelefone(), PedidoRepositoryImplementationTest.CLIENTE_TELEFONE);
-		assertEquals(pedidoCriado.getCliente().getEmail(), PedidoRepositoryImplementationTest.CLIENTE_EMAIL);
-		assertEquals(pedidoCriado.getCliente().getCpfCnpj(), PedidoRepositoryImplementationTest.CLIENTE_CPFCNPJ);
-		assertEquals(pedidoCriado.getCliente().getTipo().getCodigo(),
-				PedidoRepositoryImplementationTest.TIPOPESSOA_CODIGO);
-		assertEquals(pedidoCriado.getCliente().getTipo().getDescricao(),
-				PedidoRepositoryImplementationTest.TIPOPESSOA_DESCRICAO);
+		assertEquals(PedidoRepositoryImplementationTest.PEDIDO_DATAEMISSAO, pedidoCriado.getDataEmissao());
+		assertEquals(PedidoRepositoryImplementationTest.PEDIDO_DATAENTREGA, pedidoCriado.getDataEntrega());
+		assertEquals(PedidoRepositoryImplementationTest.PEDIDO_VALORTOTAL_UMITEM,
+				pedidoCriado.getValorTotal());
+		assertEquals(PedidoRepositoryImplementationTest.STATUSPEDIDO_CODIGO,
+				pedidoCriado.getStatus().getCodigo());
+		assertEquals(PedidoRepositoryImplementationTest.STATUSPEDIDO_DESCRICAO,
+				pedidoCriado.getStatus().getDescricao());
+		assertEquals(PedidoRepositoryImplementationTest.CLIENTE_CODIGO, pedidoCriado.getCliente().getCodigo());
+		assertEquals(PedidoRepositoryImplementationTest.CLIENTE_NOME, pedidoCriado.getCliente().getNome());
+		assertEquals(PedidoRepositoryImplementationTest.CLIENTE_TELEFONE, pedidoCriado.getCliente().getTelefone());
+		assertEquals(PedidoRepositoryImplementationTest.CLIENTE_EMAIL, pedidoCriado.getCliente().getEmail());
+		assertEquals(PedidoRepositoryImplementationTest.CLIENTE_CPFCNPJ, pedidoCriado.getCliente().getCpfCnpj());
+		assertEquals(PedidoRepositoryImplementationTest.TIPOPESSOA_CODIGO,
+				pedidoCriado.getCliente().getTipo().getCodigo());
+		assertEquals(PedidoRepositoryImplementationTest.TIPOPESSOA_DESCRICAO,
+				pedidoCriado.getCliente().getTipo().getDescricao());
 		assertNotNull(pedidoCriado.getItens());
 
 		final ItemPedido itemPedido = pedidoCriado.getItens().stream()
@@ -112,14 +112,14 @@ class PedidoRepositoryImplementationTest {
 				.findFirst().get();
 
 		assertNotNull(itemPedido);
-		assertEquals(itemPedido.getQuantidade(), PedidoRepositoryImplementationTest.ITEMPEDIDO_QUANTIDADE);
-		assertEquals(itemPedido.getPrecoUnitario(),
-				PedidoRepositoryImplementationTest.ITEMPEDIDO_PRECOUNITARIO);
-		assertEquals(itemPedido.getDesconto(), PedidoRepositoryImplementationTest.ITEMPEDIDO_DESCONTO);
-		assertEquals(itemPedido.getValorTotal(), PedidoRepositoryImplementationTest.ITEMPEDIDO_VALORTOTAL);
-		assertEquals(itemPedido.getProduto().getCodigo(), PedidoRepositoryImplementationTest.PRODUTO_CODIGO);
-		assertEquals(itemPedido.getProduto().getNome(), PedidoRepositoryImplementationTest.PRODUTO_NOME);
-		assertEquals(itemPedido.getProduto().getPreco(), PedidoRepositoryImplementationTest.PRODUTO_PRECO);
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO_QUANTIDADE, itemPedido.getQuantidade());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO_PRECOUNITARIO,
+				itemPedido.getPrecoUnitario());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO_DESCONTO, itemPedido.getDesconto());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO_VALORTOTAL, itemPedido.getValorTotal());
+		assertEquals(PedidoRepositoryImplementationTest.PRODUTO_CODIGO, itemPedido.getProduto().getCodigo());
+		assertEquals(PedidoRepositoryImplementationTest.PRODUTO_NOME, itemPedido.getProduto().getNome());
+		assertEquals(PedidoRepositoryImplementationTest.PRODUTO_PRECO, itemPedido.getProduto().getPreco());
 	}
 
 	@Test
@@ -161,29 +161,23 @@ class PedidoRepositoryImplementationTest {
 		final Pedido pedidoCriado = this.pedidoRepository.createPedido(pedidoComDoisItens);
 
 		assertNotNull(pedidoCriado);
-		assertEquals(pedidoCriado.getDataEmissao(),
-				PedidoRepositoryImplementationTest.PEDIDO_DATAEMISSAO);
-		assertEquals(pedidoCriado.getDataEntrega(),
-				PedidoRepositoryImplementationTest.PEDIDO_DATAENTREGA);
-		assertEquals(pedidoCriado.getValorTotal(),
-				PedidoRepositoryImplementationTest.PEDIDO_VALORTOTAL_DOISITENS);
-		assertEquals(pedidoCriado.getStatus().getCodigo(),
-				PedidoRepositoryImplementationTest.STATUSPEDIDO_CODIGO);
-		assertEquals(pedidoCriado.getStatus().getDescricao(),
-				PedidoRepositoryImplementationTest.STATUSPEDIDO_DESCRICAO);
-		assertEquals(pedidoCriado.getCliente().getCodigo(),
-				PedidoRepositoryImplementationTest.CLIENTE_CODIGO);
-		assertEquals(pedidoCriado.getCliente().getNome(), PedidoRepositoryImplementationTest.CLIENTE_NOME);
-		assertEquals(pedidoCriado.getCliente().getTelefone(),
-				PedidoRepositoryImplementationTest.CLIENTE_TELEFONE);
-		assertEquals(pedidoCriado.getCliente().getEmail(),
-				PedidoRepositoryImplementationTest.CLIENTE_EMAIL);
-		assertEquals(pedidoCriado.getCliente().getCpfCnpj(),
-				PedidoRepositoryImplementationTest.CLIENTE_CPFCNPJ);
-		assertEquals(pedidoCriado.getCliente().getTipo().getCodigo(),
-				PedidoRepositoryImplementationTest.TIPOPESSOA_CODIGO);
-		assertEquals(pedidoCriado.getCliente().getTipo().getDescricao(),
-				PedidoRepositoryImplementationTest.TIPOPESSOA_DESCRICAO);
+		assertEquals(PedidoRepositoryImplementationTest.PEDIDO_DATAEMISSAO,
+				pedidoCriado.getDataEmissao());
+		assertEquals(PedidoRepositoryImplementationTest.PEDIDO_DATAENTREGA,
+				pedidoCriado.getDataEntrega());
+		assertEquals(PedidoRepositoryImplementationTest.PEDIDO_VALORTOTAL_DOISITENS,
+				pedidoCriado.getValorTotal());
+
+		assertEquals(PedidoRepositoryImplementationTest.STATUSPEDIDO_DESCRICAO,
+				pedidoCriado.getStatus().getDescricao());
+
+		assertEquals(PedidoRepositoryImplementationTest.CLIENTE_NOME, pedidoCriado.getCliente().getNome());
+
+		assertEquals(PedidoRepositoryImplementationTest.CLIENTE_CPFCNPJ,
+				pedidoCriado.getCliente().getCpfCnpj());
+		
+		assertEquals(PedidoRepositoryImplementationTest.TIPOPESSOA_DESCRICAO,
+				pedidoCriado.getCliente().getTipo().getDescricao());
 		assertNotNull(pedidoCriado.getItens());
 
 		final ItemPedido itemPedido1Criado = pedidoCriado.getItens().stream()
@@ -191,25 +185,24 @@ class PedidoRepositoryImplementationTest {
 				.findFirst().get();
 
 		assertNotNull(itemPedido1Criado);
-		assertEquals(itemPedido1Criado.getQuantidade(), PedidoRepositoryImplementationTest.ITEMPEDIDO_QUANTIDADE);
-		assertEquals(itemPedido1Criado.getPrecoUnitario(),
-				PedidoRepositoryImplementationTest.ITEMPEDIDO_PRECOUNITARIO);
-		assertEquals(itemPedido1Criado.getDesconto(), PedidoRepositoryImplementationTest.ITEMPEDIDO_DESCONTO);
-		assertEquals(itemPedido1Criado.getValorTotal(), PedidoRepositoryImplementationTest.ITEMPEDIDO_VALORTOTAL);
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO_QUANTIDADE, itemPedido1Criado.getQuantidade());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO_PRECOUNITARIO,
+				itemPedido1Criado.getPrecoUnitario());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO_DESCONTO, itemPedido1Criado.getDesconto());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO_VALORTOTAL, itemPedido1Criado.getValorTotal());
 
 		final ItemPedido itemPedido2Criado = pedidoCriado.getItens().stream()
 				.filter(i -> i.getNumeroSequencia() == PedidoRepositoryImplementationTest.ITEMPEDIDO2_NUMEROSEQUENCIA)
 				.findFirst().get();
 
 		assertNotNull(itemPedido2Criado);
-		assertEquals(itemPedido2Criado.getQuantidade(), PedidoRepositoryImplementationTest.ITEMPEDIDO2_QUANTIDADE);
-		assertEquals(itemPedido2Criado.getPrecoUnitario(),
-				PedidoRepositoryImplementationTest.ITEMPEDIDO2_PRECOUNITARIO);
-		assertEquals(itemPedido2Criado.getDesconto(), PedidoRepositoryImplementationTest.ITEMPEDIDO2_DESCONTO);
-		assertEquals(itemPedido2Criado.getValorTotal(), PedidoRepositoryImplementationTest.ITEMPEDIDO2_VALORTOTAL);
-		assertEquals(itemPedido2Criado.getProduto().getCodigo(), PedidoRepositoryImplementationTest.PRODUTO_CODIGO);
-		assertEquals(itemPedido2Criado.getProduto().getNome(), PedidoRepositoryImplementationTest.PRODUTO_NOME);
-		assertEquals(itemPedido2Criado.getProduto().getPreco(), PedidoRepositoryImplementationTest.PRODUTO_PRECO);
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO2_QUANTIDADE, itemPedido2Criado.getQuantidade());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO2_PRECOUNITARIO,
+				itemPedido2Criado.getPrecoUnitario());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO2_DESCONTO, itemPedido2Criado.getDesconto());
+		assertEquals(PedidoRepositoryImplementationTest.ITEMPEDIDO2_VALORTOTAL, itemPedido2Criado.getValorTotal());
+		assertEquals(PedidoRepositoryImplementationTest.PRODUTO_NOME, itemPedido2Criado.getProduto().getNome());
+		assertEquals(PedidoRepositoryImplementationTest.PRODUTO_PRECO, itemPedido2Criado.getProduto().getPreco());
 
 	}
 

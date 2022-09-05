@@ -37,14 +37,14 @@ class ItemPedidoRequestModelTest {
 				ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_CODIGOPRODUTO);
 		final ItemPedido itemPedido = itemPedidoRequestModel.toItemPedido(this.getProduto);
 
-		assertEquals(itemPedido.getNumeroSequencia(),
-				ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_NUMEROSEQUENCIA);
-		assertEquals(itemPedido.getQuantidade(), ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_QUANTIDADE);
-		assertEquals(itemPedido.getPrecoUnitario(), ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_PRECOUNITARIO);
-		assertEquals(itemPedido.getDesconto(), ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_DESCONTO);
-		assertEquals(itemPedido.getValorTotal(), ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_VALORTOTAL);
-		assertEquals(itemPedido.getProduto().getCodigo(),
-				ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_CODIGOPRODUTO);
+		assertEquals(ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_NUMEROSEQUENCIA,
+				itemPedido.getNumeroSequencia());
+		assertEquals(ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_QUANTIDADE, itemPedido.getQuantidade());
+		assertEquals(ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_PRECOUNITARIO, itemPedido.getPrecoUnitario());
+		assertEquals(ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_DESCONTO, itemPedido.getDesconto());
+		assertEquals(ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_VALORTOTAL, itemPedido.getValorTotal());
+		assertEquals(ItemPedidoRequestModelTest.ITEMPEDIDOREQUESTMODEL_CODIGOPRODUTO,
+				itemPedido.getProduto().getCodigo());
 	}
 
 }

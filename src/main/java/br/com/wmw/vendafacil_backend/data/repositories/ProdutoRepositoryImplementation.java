@@ -27,7 +27,7 @@ public class ProdutoRepositoryImplementation implements ProdutoRepository {
 	public Produto getProdutoByCodigo(final Long codigo) {
 		final Optional<ProdutoModel> opProdutoModel = this.datasourceProduto.getProdutoByCodigo(codigo);
 		if (!opProdutoModel.isPresent()) {
-			throw new NotFoundException("Produto");
+			throw new NotFoundException(String.format("O produto com o CODIGO %d não existe.", codigo));
 		}
 		return opProdutoModel.get().toProduto();
 	}

@@ -1,7 +1,6 @@
 package br.com.wmw.vendafacil_backend.data.models.produto;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import br.com.wmw.vendafacil_backend.domain.produto.entity.Produto;
 import lombok.Getter;
@@ -22,7 +21,7 @@ public class ProdutoResponseModel {
 	}
 
 	public static List<ProdutoResponseModel> convert(final List<Produto> produtoList) {
-		return produtoList.stream().map(ProdutoResponseModel::new).collect(Collectors.toList());
+		return produtoList.stream().map(ProdutoResponseModel::new).toList();
 	}
 
 }

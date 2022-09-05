@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.wmw.vendafacil_backend.domain.produto.entity.Produto;
 
@@ -30,13 +29,13 @@ class ProdutoModelTest {
 
 		final Produto produto1 = produtoList.stream().filter(p -> p.getCodigo() == ProdutoModelTest.CODIGO_PRODUTO1)
 				.findFirst().get();
-		assertEquals(produto1.getNome(), ProdutoModelTest.NOME_PRODUTO1);
-		assertEquals(produto1.getPreco(), ProdutoModelTest.PRECO_PRODUTO1);
+		assertEquals(ProdutoModelTest.NOME_PRODUTO1, produto1.getNome());
+		assertEquals(ProdutoModelTest.PRECO_PRODUTO1, produto1.getPreco());
 
 		final Produto produto2 = produtoList.stream().filter(p -> p.getCodigo() == ProdutoModelTest.CODIGO_PRODUTO2)
 				.findFirst().get();
-		assertEquals(produto2.getNome(), ProdutoModelTest.NOME_PRODUTO2);
-		assertEquals(produto2.getPreco(), ProdutoModelTest.PRECO_PRODUTO2);
+		assertEquals(ProdutoModelTest.NOME_PRODUTO2, produto2.getNome());
+		assertEquals(ProdutoModelTest.PRECO_PRODUTO2, produto2.getPreco());
 
 	}
 

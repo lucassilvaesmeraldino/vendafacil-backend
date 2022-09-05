@@ -32,8 +32,8 @@ class StatusPedidoRepositoryImplementationTest {
 				.getStatusPedidoByCodigo(StatusPedidoRepositoryImplementationTest.STATUSPEDIDO_CODIGOVALIDO));
 		final StatusPedido statusPedido = this.statusPedidoRepository
 				.getStatusPedidoByCodigo(StatusPedidoRepositoryImplementationTest.STATUSPEDIDO_CODIGOVALIDO);
-		assertEquals(statusPedido.getDescricao(),
-				StatusPedidoRepositoryImplementationTest.STATUSPEDIDO_DESCRICAOVALIDA);
+		assertEquals(StatusPedidoRepositoryImplementationTest.STATUSPEDIDO_DESCRICAOVALIDA,
+				statusPedido.getDescricao());
 
 	}
 

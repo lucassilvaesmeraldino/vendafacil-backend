@@ -1,7 +1,6 @@
 package br.com.wmw.vendafacil_backend.data.models.cliente;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -52,7 +51,7 @@ public class ClienteModel {
 				.map(clienteModel -> new Cliente(clienteModel.getCodigo(), clienteModel.getNome(),
 						clienteModel.getTelefone(), clienteModel.getEmail(), clienteModel.getCpfCnpj(),
 						clienteModel.getTipo().toTipoPessoa()))
-				.collect(Collectors.toList());
+				.toList();
 	}
 
 	public static ClienteModel convert(final Cliente cliente) {

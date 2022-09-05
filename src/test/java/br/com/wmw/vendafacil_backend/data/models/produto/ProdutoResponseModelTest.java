@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.wmw.vendafacil_backend.domain.produto.entity.Produto;
 
@@ -26,9 +25,9 @@ class ProdutoResponseModelTest {
 
 		final ProdutoResponseModel produtoResponseModel = new ProdutoResponseModel(produto);
 
-		assertEquals(produtoResponseModel.getCodigo(), ProdutoResponseModelTest.CODIGO_PRODUTO);
-		assertEquals(produtoResponseModel.getNome(), ProdutoResponseModelTest.NOME_PRODUTO);
-		assertEquals(produtoResponseModel.getPreco(), ProdutoResponseModelTest.PRECO_PRODUTO);
+		assertEquals(ProdutoResponseModelTest.CODIGO_PRODUTO, produtoResponseModel.getCodigo());
+		assertEquals(ProdutoResponseModelTest.NOME_PRODUTO, produtoResponseModel.getNome());
+		assertEquals(ProdutoResponseModelTest.PRECO_PRODUTO, produtoResponseModel.getPreco());
 	}
 
 	@Test
@@ -43,13 +42,13 @@ class ProdutoResponseModelTest {
 
 		final ProdutoResponseModel produtoResponseModel1 = produtoResponseModelList.stream()
 				.filter(prm -> prm.getCodigo() == ProdutoResponseModelTest.CODIGO_PRODUTO).findFirst().get();
-		assertEquals(produtoResponseModel1.getNome(), ProdutoResponseModelTest.NOME_PRODUTO);
-		assertEquals(produtoResponseModel1.getPreco(), ProdutoResponseModelTest.PRECO_PRODUTO);
+		assertEquals(ProdutoResponseModelTest.NOME_PRODUTO, produtoResponseModel1.getNome());
+		assertEquals(ProdutoResponseModelTest.PRECO_PRODUTO, produtoResponseModel1.getPreco());
 
 		final ProdutoResponseModel produtoResponseModel2 = produtoResponseModelList.stream()
 				.filter(prm -> prm.getCodigo() == ProdutoResponseModelTest.CODIGO_PRODUTO2).findFirst().get();
-		assertEquals(produtoResponseModel2.getNome(), ProdutoResponseModelTest.NOME_PRODUTO2);
-		assertEquals(produtoResponseModel2.getPreco(), ProdutoResponseModelTest.PRECO_PRODUTO2);
+		assertEquals(ProdutoResponseModelTest.NOME_PRODUTO2, produtoResponseModel2.getNome());
+		assertEquals(ProdutoResponseModelTest.PRECO_PRODUTO2, produtoResponseModel2.getPreco());
 
 	}
 

@@ -27,7 +27,7 @@ public class CreatePedido {
 	}
 
 	private void executeValidations(final Pedido pedido) {
-		pedido.getItens().forEach(item -> this.descontoItemValidator.validate(item));
+		pedido.getItens().forEach(this.descontoItemValidator::validate);
 		this.valorTotalPedidoValidator.validate(pedido);
 	}
 }

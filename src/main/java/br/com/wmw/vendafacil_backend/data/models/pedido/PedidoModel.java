@@ -3,7 +3,6 @@ package br.com.wmw.vendafacil_backend.data.models.pedido;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -64,7 +63,7 @@ public class PedidoModel {
 
 	public Pedido toPedido() {
 		final List<ItemPedido> itensConverted = this.itens.stream().map(ItemPedidoModel::toItemPedido)
-				.collect(Collectors.toList());
+				.toList();
 		return new Pedido(this.numero, this.dataEmissao, this.dataEntrega, this.status.toStatusPedido(),
 				this.valorTotal, this.cliente.toCliente(), itensConverted);
 	}

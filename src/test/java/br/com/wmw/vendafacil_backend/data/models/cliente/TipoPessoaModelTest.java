@@ -3,7 +3,6 @@ package br.com.wmw.vendafacil_backend.data.models.cliente;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.wmw.vendafacil_backend.domain.cliente.entity.TipoPessoa;
 
@@ -18,8 +17,8 @@ class TipoPessoaModelTest {
 				TipoPessoaModelTest.DESCRICAO_TIPOPESSOA);
 		final TipoPessoa tipoPessoa = tipoPessoaModel.toTipoPessoa();
 
-		assertEquals(tipoPessoa.getCodigo(), TipoPessoaModelTest.CODIGO_TIPOPESSOA);
-		assertEquals(tipoPessoa.getDescricao(), TipoPessoaModelTest.DESCRICAO_TIPOPESSOA);
+		assertEquals(TipoPessoaModelTest.CODIGO_TIPOPESSOA, tipoPessoa.getCodigo());
+		assertEquals(TipoPessoaModelTest.DESCRICAO_TIPOPESSOA, tipoPessoa.getDescricao());
 	}
 
 	@Test
@@ -27,8 +26,8 @@ class TipoPessoaModelTest {
 		final TipoPessoa tipoPessoa = new TipoPessoa(TipoPessoaModelTest.CODIGO_TIPOPESSOA,
 				TipoPessoaModelTest.DESCRICAO_TIPOPESSOA);
 		final TipoPessoaModel tipoPessoaModel = TipoPessoaModel.convert(tipoPessoa);
-		assertEquals(tipoPessoaModel.getCodigo(), TipoPessoaModelTest.CODIGO_TIPOPESSOA);
-		assertEquals(tipoPessoaModel.getDescricao(), TipoPessoaModelTest.DESCRICAO_TIPOPESSOA);
+		assertEquals(TipoPessoaModelTest.CODIGO_TIPOPESSOA, tipoPessoaModel.getCodigo());
+		assertEquals(TipoPessoaModelTest.DESCRICAO_TIPOPESSOA, tipoPessoaModel.getDescricao());
 	}
 
 }

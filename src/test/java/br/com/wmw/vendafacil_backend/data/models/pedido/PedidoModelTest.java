@@ -56,18 +56,18 @@ class PedidoModelTest {
 				null);
 		final PedidoModel pedidoModel = PedidoModel.convert(pedido);
 
-		assertEquals(pedidoModel.getDataEmissao(), PedidoModelTest.PEDIDO_DATAEMISSAO);
-		assertEquals(pedidoModel.getDataEntrega(), PedidoModelTest.PEDIDO_DATAENTREGA);
-		assertEquals(pedidoModel.getValorTotal(), PedidoModelTest.PEDIDO_VALORTOTAL);
-		assertEquals(pedidoModel.getStatus().getCodigo(), PedidoModelTest.STATUSPEDIDO_CODIGO);
-		assertEquals(pedidoModel.getStatus().getDescricao(), PedidoModelTest.STATUSPEDIDO_DESCRICAO);
-		assertEquals(pedidoModel.getCliente().getCodigo(), PedidoModelTest.CLIENTE_CODIGO);
-		assertEquals(pedidoModel.getCliente().getNome(), PedidoModelTest.CLIENTE_NOME);
-		assertEquals(pedidoModel.getCliente().getTelefone(), PedidoModelTest.CLIENTE_TELEFONE);
-		assertEquals(pedidoModel.getCliente().getEmail(), PedidoModelTest.CLIENTE_EMAIL);
-		assertEquals(pedidoModel.getCliente().getCpfCnpj(), PedidoModelTest.CLIENTE_CPFCNPJ);
-		assertEquals(pedidoModel.getCliente().getTipo().getCodigo(), PedidoModelTest.TIPOPESSOA_CODIGO);
-		assertEquals(pedidoModel.getCliente().getTipo().getDescricao(), PedidoModelTest.TIPOPESSOA_DESCRICAO);
+		assertEquals(PedidoModelTest.PEDIDO_DATAEMISSAO, pedidoModel.getDataEmissao());
+		assertEquals(PedidoModelTest.PEDIDO_DATAENTREGA, pedidoModel.getDataEntrega());
+		assertEquals(PedidoModelTest.PEDIDO_VALORTOTAL, pedidoModel.getValorTotal());
+		assertEquals(PedidoModelTest.STATUSPEDIDO_CODIGO, pedidoModel.getStatus().getCodigo());
+		assertEquals(PedidoModelTest.STATUSPEDIDO_DESCRICAO, pedidoModel.getStatus().getDescricao());
+		assertEquals(PedidoModelTest.CLIENTE_CODIGO, pedidoModel.getCliente().getCodigo());
+		assertEquals(PedidoModelTest.CLIENTE_NOME, pedidoModel.getCliente().getNome());
+		assertEquals(PedidoModelTest.CLIENTE_TELEFONE, pedidoModel.getCliente().getTelefone());
+		assertEquals(PedidoModelTest.CLIENTE_EMAIL, pedidoModel.getCliente().getEmail());
+		assertEquals(PedidoModelTest.CLIENTE_CPFCNPJ, pedidoModel.getCliente().getCpfCnpj());
+		assertEquals(PedidoModelTest.TIPOPESSOA_CODIGO, pedidoModel.getCliente().getTipo().getCodigo());
+		assertEquals(PedidoModelTest.TIPOPESSOA_DESCRICAO, pedidoModel.getCliente().getTipo().getDescricao());
 	}
 
 	@Test
@@ -83,19 +83,19 @@ class PedidoModelTest {
 				new ArrayList<>());
 		final Pedido pedido = pedidoModel.toPedido();
 
-		assertEquals(pedido.getNumero(), PedidoModelTest.PEDIDO_NUMERO);
-		assertEquals(pedido.getDataEmissao(), PedidoModelTest.PEDIDO_DATAEMISSAO);
-		assertEquals(pedido.getDataEntrega(), PedidoModelTest.PEDIDO_DATAENTREGA);
-		assertEquals(pedido.getValorTotal(), PedidoModelTest.PEDIDO_VALORTOTAL);
-		assertEquals(pedido.getStatus().getCodigo(), PedidoModelTest.STATUSPEDIDO_CODIGO);
-		assertEquals(pedido.getStatus().getDescricao(), PedidoModelTest.STATUSPEDIDO_DESCRICAO);
-		assertEquals(pedido.getCliente().getCodigo(), PedidoModelTest.CLIENTE_CODIGO);
-		assertEquals(pedido.getCliente().getNome(), PedidoModelTest.CLIENTE_NOME);
-		assertEquals(pedido.getCliente().getTelefone(), PedidoModelTest.CLIENTE_TELEFONE);
-		assertEquals(pedido.getCliente().getEmail(), PedidoModelTest.CLIENTE_EMAIL);
-		assertEquals(pedido.getCliente().getCpfCnpj(), PedidoModelTest.CLIENTE_CPFCNPJ);
-		assertEquals(pedido.getCliente().getTipo().getCodigo(), PedidoModelTest.TIPOPESSOA_CODIGO);
-		assertEquals(pedido.getCliente().getTipo().getDescricao(), PedidoModelTest.TIPOPESSOA_DESCRICAO);
+		assertEquals(PedidoModelTest.PEDIDO_NUMERO, pedido.getNumero());
+		assertEquals(PedidoModelTest.PEDIDO_DATAEMISSAO, pedido.getDataEmissao());
+		assertEquals(PedidoModelTest.PEDIDO_DATAENTREGA, pedido.getDataEntrega());
+		assertEquals(PedidoModelTest.PEDIDO_VALORTOTAL, pedido.getValorTotal());
+		assertEquals(PedidoModelTest.STATUSPEDIDO_CODIGO, pedido.getStatus().getCodigo());
+		assertEquals(PedidoModelTest.STATUSPEDIDO_DESCRICAO, pedido.getStatus().getDescricao());
+		assertEquals(PedidoModelTest.CLIENTE_CODIGO, pedido.getCliente().getCodigo());
+		assertEquals(PedidoModelTest.CLIENTE_NOME, pedido.getCliente().getNome());
+		assertEquals(PedidoModelTest.CLIENTE_TELEFONE, pedido.getCliente().getTelefone());
+		assertEquals(PedidoModelTest.CLIENTE_EMAIL, pedido.getCliente().getEmail());
+		assertEquals(PedidoModelTest.CLIENTE_CPFCNPJ, pedido.getCliente().getCpfCnpj());
+		assertEquals(PedidoModelTest.TIPOPESSOA_CODIGO, pedido.getCliente().getTipo().getCodigo());
+		assertEquals(PedidoModelTest.TIPOPESSOA_DESCRICAO, pedido.getCliente().getTipo().getDescricao());
 	}
 
 	@Test
@@ -120,17 +120,17 @@ class PedidoModelTest {
 		final ItemPedidoModel itemPedidoModel1 = pedidoModel.getItens().stream()
 				.filter(i -> i.getCodigo() == PedidoModelTest.ITEMPEDIDOMODEL_CODIGO).findFirst().get();
 
-		assertEquals(itemPedidoModel1.getNumeroSequencia(), PedidoModelTest.ITEMPEDIDOMODEL_NUMEROSEQUENCIA);
-		assertEquals(itemPedidoModel1.getQuantidade(), PedidoModelTest.ITEMPEDIDOMODEL_QUANTIDADE);
-		assertEquals(itemPedidoModel1.getPrecoUnitario(), PedidoModelTest.ITEMPEDIDOMODEL_PRECOUNITARIO);
-		assertEquals(itemPedidoModel1.getDesconto(), PedidoModelTest.ITEMPEDIDOMODEL_DESCONTO);
-		assertEquals(itemPedidoModel1.getValorTotal(), PedidoModelTest.ITEMPEDIDOMODEL_VALORTOTAL);
-		assertEquals(itemPedidoModel1.getPedido().getNumero(), PedidoModelTest.PEDIDO_NUMERO);
-		assertEquals(itemPedidoModel1.getPedido().getDataEmissao(), PedidoModelTest.PEDIDO_DATAEMISSAO);
-		assertEquals(itemPedidoModel1.getPedido().getDataEntrega(), PedidoModelTest.PEDIDO_DATAENTREGA);
-		assertEquals(itemPedidoModel1.getPedido().getStatus().getCodigo(), PedidoModelTest.STATUSPEDIDO_CODIGO);
-		assertEquals(itemPedidoModel1.getPedido().getStatus().getDescricao(),
-				PedidoModelTest.STATUSPEDIDO_DESCRICAO);
+		assertEquals(PedidoModelTest.ITEMPEDIDOMODEL_NUMEROSEQUENCIA, itemPedidoModel1.getNumeroSequencia());
+		assertEquals(PedidoModelTest.ITEMPEDIDOMODEL_QUANTIDADE, itemPedidoModel1.getQuantidade());
+		assertEquals(PedidoModelTest.ITEMPEDIDOMODEL_PRECOUNITARIO, itemPedidoModel1.getPrecoUnitario());
+		assertEquals(PedidoModelTest.ITEMPEDIDOMODEL_DESCONTO, itemPedidoModel1.getDesconto());
+		assertEquals(PedidoModelTest.ITEMPEDIDOMODEL_VALORTOTAL, itemPedidoModel1.getValorTotal());
+		assertEquals(PedidoModelTest.PEDIDO_NUMERO, itemPedidoModel1.getPedido().getNumero());
+		assertEquals(PedidoModelTest.PEDIDO_DATAEMISSAO, itemPedidoModel1.getPedido().getDataEmissao());
+		assertEquals(PedidoModelTest.PEDIDO_DATAENTREGA, itemPedidoModel1.getPedido().getDataEntrega());
+		assertEquals(PedidoModelTest.STATUSPEDIDO_CODIGO, itemPedidoModel1.getPedido().getStatus().getCodigo());
+		assertEquals(PedidoModelTest.STATUSPEDIDO_DESCRICAO,
+				itemPedidoModel1.getPedido().getStatus().getDescricao());
 	}
 
 }

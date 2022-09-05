@@ -1,7 +1,6 @@
 package br.com.wmw.vendafacil_backend.data.models.produto;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -37,7 +36,7 @@ public class ProdutoModel {
 	public static List<Produto> convertToProdutoList(final List<ProdutoModel> produtoModelList) {
 		return produtoModelList.stream().map(
 				produtoModel -> new Produto(produtoModel.getCodigo(), produtoModel.getNome(), produtoModel.getPreco()))
-				.collect(Collectors.toList());
+				.toList();
 	}
 
 	public static ProdutoModel toProdutoModel(final Produto produto) {
