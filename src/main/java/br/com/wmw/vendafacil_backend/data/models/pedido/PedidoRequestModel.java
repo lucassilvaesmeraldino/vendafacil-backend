@@ -21,10 +21,8 @@ import lombok.Getter;
 public class PedidoRequestModel {
 
 	@NotNull(message = "A data de emissão do pedido não pode ser nula.")
-	@NotNull
 	private final LocalDate dataEmissao;
 	@NotNull(message = "A data de entrega do pedido não pode ser nula.")
-	@NotNull
 	private final LocalDate dataEntrega;
 	@Positive
 	@NotNull
